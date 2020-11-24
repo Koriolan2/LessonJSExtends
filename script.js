@@ -1,14 +1,42 @@
-let num = 266219;
-let numStr = num.toString();
+'use strict'
 
-let rez = 1;
-
-for (let i = 0; i<numStr.length; i++) {
-    rez *= numStr.substr(i,1);
+const lang = 'ru';
+let rezult ='';
+let rezult2 ='';
+let rezult3 ='';
+if (lang === 'en') {
+    rezult = 'Monday, Tuseday, Wendsday, Thirstday, Friday, Saturday, Sunday';
+} else if (lang === 'ru') {
+    rezult = 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье';
+} else {
+    rezult = 'что-то не так :(';
 }
 
-rez **= 3;
-let rStr = rez.toString();
+console.log(rezult);
 
-console.log(rStr.substring(0, 3));
+switch (lang) {
+    case 'en' : rezult2 = 'Monday, Tuseday, Wendsday, Thirstday, Friday, Saturday, Sunday'; break;
+    case 'ru' : rezult2 = 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье'; break;
+    default: rezult2 = 'что-то не так :('; break;
+}
+
+console.log(rezult2);
+
+const arr = {
+    en: 'Monday, Tuseday, Wendsday, Thirstday, Friday, Saturday, Sunday',
+    ru: 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье'
+}
+
+rezult3 = arr[lang];
+console.log(rezult3);
+
+// Второе задание
+const namePerson = prompt('введите имя', 'Артем');
+
+let rezult4='';
+
+rezult4 = namePerson === 'Артем' ? 'директор':'студент';
+rezult4 = namePerson === 'Максим' ? 'преподаватель':'студент';
+
+console.log(rezult4);
 
