@@ -1,38 +1,37 @@
-// Анализ, является ли строкой 
-const isString = function(sts) {
-    if (typeof sts !== 'string') {
-        return true;
-    } else {
-        return false;
+'use strict'
+
+const arr = ['2345', '567', '400', '3353', '13131', '23487', '28906'];
+
+let twoStart = function(a) {
+    let count = a.length;
+   
+    for(let i = 0; i<count; i++) {
+
+       let c =  a[i].slice(0,1);
+
+       if (c==='2' || c==='4') {
+            console.log(a[i]);
+       }
     }
+};
+
+twoStart(arr);
+
+/* Второе задание */
+
+let  allPrime = function() {
+
+    let n = 100;
+
+    nextPrime:
+    for (let i = 2; i <= n; i++) { 
     
-}
-
-// Чистка строки и обрезание по длине
-const excerpt = function(st) {
-        st = st.trim();
-        
-        if (st.length > 30) {
-            return st.substr(0, 30) + '...';
-        } else {
-            return st;
-        }
+      for (let j = 2; j < i; j++) { 
+        if (i % j == 0) continue nextPrime; 
+      }
+    
+      console.log(i + ' Делители этого числа 1 и '+ i);
     }
+};
 
-// Главный анализатор
-const textAnalitic = function(bigText) {
-
-    let newStr;
-
-    if (isString(bigText)) {
-        newStr = 'Не является строкой';
-    } else {
-        newStr = excerpt(bigText);
-    }
-    return newStr;
-}
-
-// Вызов
-let s = 'Обратите внимание на то, что все значения созданные с помощью ключевого слова';
-
-console.log(textAnalitic(s));
+allPrime();
