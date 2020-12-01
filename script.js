@@ -1,6 +1,6 @@
 'use strict'
 
-let data = newDate();
+let data = new Date();
 
 
 
